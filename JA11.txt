@@ -1,0 +1,186 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package javaapplication48;
+import java.io.*;
+/**
+ *
+ * @author Angelica
+ */
+public class JavaApplication48 {
+
+    static InputStreamReader reader = new InputStreamReader(System.in);
+    static BufferedReader br=new BufferedReader(reader);
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+        // TODO code application logic here
+        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+        
+        
+        String GCQ = "";
+        String MGCQ = "";
+        String ECQ = "";
+        int ECQcase = 0;
+        int GCQcase = 0;
+        int MGCQcase = 0;
+        
+        String ar1 = "NCR ";
+        String ar2 = "Cavite ";
+        String ar3 = "Laguna ";
+        String ar4 = "Bulacan ";
+        String ar5 = "Rizal ";
+        String NA1 = "No area is under ECQ";
+        String NA2 = "No area is under GCQ";
+        String NA3 = "No area is under MGCQ";
+        
+        //int ECQ = Integer.parseInt(ECQcase);
+        
+        for (int Arcase = 1; Arcase < 6; Arcase++){
+
+        System.out.print("Enter case in area" +Arcase+ ":");
+        int CaseInAr = Integer.parseInt(br.readLine());
+
+  switch (Arcase){
+        case 1:
+        
+            if (CaseInAr >= 100){
+                ECQ = ECQ + ar1;
+            }
+            if (CaseInAr >= 20 && CaseInAr <= 99){
+                GCQ = GCQ + ar1;
+            }
+            if (CaseInAr >= 0 && CaseInAr <= 19) {
+                MGCQ = MGCQ + ar1;
+            }
+            if (ECQ == null){
+                ECQ = NA1;
+                continue;
+            }
+            else if (GCQ == null){
+                GCQ = NA2;
+                continue;
+            }
+            else if (MGCQ == null){
+                MGCQ = NA3;
+                continue;
+            }
+            break;
+        
+        case 2:
+        
+            if (CaseInAr >= 100){
+                ECQ = ECQ + ar2;
+            }
+            if (CaseInAr >= 20 && CaseInAr <= 99){
+                GCQ = GCQ + ar2;
+            }
+            if (CaseInAr >= 0 && CaseInAr <= 19) {
+                MGCQ = MGCQ + ar2;
+            }
+            if (ECQ == null){
+                ECQ = NA1;
+                continue;
+            }
+            else if (GCQ == null){
+                GCQ = NA2;
+                continue;
+            }
+            else if (MGCQ == null){
+                MGCQ = NA3;
+                continue;
+            }
+            break;
+
+        case 3:
+        
+            if (CaseInAr >= 100){
+                ECQ = ECQ + ar3;
+            }
+            if (CaseInAr >= 20 && CaseInAr <= 99){
+                GCQ = GCQ + ar3;
+            }
+            if (CaseInAr >= 0 && CaseInAr <= 19) {
+                MGCQ = MGCQ + ar3;
+            }
+            if (ECQ == null){
+                ECQ = NA1;
+                continue;
+            }
+            else if (GCQ == null){
+                GCQ = NA2;
+                continue;
+            }
+            else if (MGCQ == null){
+                MGCQ = NA3;
+                continue;
+            }
+            break;
+
+        case 4:
+        
+            if (CaseInAr >= 100){
+                ECQ = ECQ + ar4;
+            }
+            if (CaseInAr >= 20 && CaseInAr <= 99){
+                GCQ = GCQ + ar4;
+            }
+            if (CaseInAr >= 0 && CaseInAr <= 19) {
+                MGCQ = MGCQ + ar4;
+            }
+            if (ECQ == null){
+                ECQ = NA1;
+                continue;
+            }
+            else if (GCQ == null){
+                GCQ = NA2;
+                continue;
+            }
+            else if (MGCQ == null){
+                MGCQ = NA3;
+                continue;
+            }
+            break;
+
+         case 5:
+        
+            if (CaseInAr >= 100){
+                ECQ = ECQ + ar5;
+            }
+            if (CaseInAr >= 20 && CaseInAr <= 99){
+                GCQ = GCQ + ar5;
+            }
+            if (CaseInAr >= 0 && CaseInAr <= 19) {
+                MGCQ = MGCQ + ar5;
+            }
+           if (ECQ == null){
+                ECQ = NA1;
+                continue;
+            }
+            else if (GCQ == null){
+                GCQ = NA2;
+                continue;
+            }
+            else if (MGCQ == null){
+                MGCQ = NA3;
+                continue;
+            }
+            break;
+         
+        default:
+            System.out.println("end of ");
+            break;
+        }
+           
+        }
+            System.out.println("Under ECQ is/are: " +ECQ);
+            System.out.println("Under GCQ is/are: " +GCQ);
+            System.out.println("Under MGCQ is/are: " +MGCQ);
+            
+            }
+    }

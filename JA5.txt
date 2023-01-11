@@ -1,0 +1,74 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication29;
+
+/**
+ *
+ * @author Angelica
+ */
+public class JavaApplication29 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        // My name 
+        String name = "Angelica Joy Q. Glory";
+        
+        /*
+         *numbers 1 to 3
+         *"N" in N1, N2 and N3 stands for number 
+         * numbers that is already declared in N1 to N3 is arranged 
+          from lowest to highest for more easy usage and understanding.
+         */
+        double N1 = 3;
+        double N2 = 5;
+        double N3 = 9;
+        int sum, diff, prod;
+        double ave, quo, total;
+        /*some are in double so that decimal would appear in the result of
+          of the operation, otherwise is in int.
+         */
+        
+        // the "+name" is to declare the string above variable "name"
+        System.out.println("Hello, " +name);
+        /*int is declared again here because N1 to N3 is in double
+         *so that the result would be in int (would not have a decimal)
+         * same with variable diff and prod
+         */
+        sum = (int) (N1+N2+N3);
+        System.out.println("The sum is: " +sum);
+        // variable diff short for difference
+        diff = (int) (N3-N2-N1);
+        System.out.println("The difference is: " +diff);
+        // variable prod short for product
+        prod = (int) (N1*N2*N3);
+        System.out.println("The product is: " +prod);
+        /*variable total is process for the average
+         * although it is almost the same to sum
+         * I can't use sum because sun is in int and 
+           I need the process on double for the needed output
+         * variable ave is short for variable
+         */
+        total = (N1+N2+N3)/3;
+        System.out.println("The average is: " +(ave=total));
+        /*quo is also in double for needed output,
+          which is in decimal form
+         *variable quo for quotient
+        */
+        quo = N3/N2/N1;
+        System.out.println("The quotient is: " +quo);
+        // printing "Thank you! for finishing"
+        System.out.println("Thank you!");
+        
+        
+        
+        
+    }
+    
+}

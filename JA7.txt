@@ -1,0 +1,36 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication34;
+import java.util.*;
+import java.io.*;       
+/**
+ *
+ * @author Angelica
+ */
+public class JavaApplication34 {
+    
+    static InputStreamReader reader = new InputStreamReader(System.in);
+        static BufferedReader br = new BufferedReader(reader);
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+        // TODO code application logic here
+        int size = 0;
+        System.out.print("Enter array size: ");
+        size = Integer.parseInt(br.readLine());
+        int [] arr = new int[size];
+        for (int x = 0; x < arr.length; x++){
+            System.out.print("Enter element: ");
+            arr[x] = Integer.parseInt(br.readLine());
+        }
+        
+       System.out.println("Your array: " + Arrays.toString(arr));
+        
+    }
+    
+}

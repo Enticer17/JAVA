@@ -1,0 +1,97 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package javaapplication42;
+import java.io.*;
+import java.text.DecimalFormat;
+/**
+ *
+ * @author Angelica
+ */
+public class JavaApplication42 {
+
+    static InputStreamReader reader = new InputStreamReader(System.in);
+    static BufferedReader br=new BufferedReader(reader);
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+        // TODO code application logic here
+        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+        DecimalFormat decform = new DecimalFormat("#.00");
+
+        int foreign = 240; //price for foreign movie
+        int local = 210; //price for local movie
+        int senior_discount = 0; //senior is free in the theater
+        
+        //number of student who will watch a movie
+        System.out.print("Enter number of student: ");
+        int student = Integer.parseInt(br.readLine());
+        //number of senior citizen who will watch a movie
+        System.out.print("Enter number of senior: ");
+        int senior = Integer.parseInt(br.readLine());
+        //number of people who is not a student nor a senior who will watch a movie
+        System.out.print("Enter number of regular: ");
+        int regular = Integer.parseInt(br.readLine());
+
+        //movie categories
+        System.out.println("\n"+"\t"+"Choose your movie category: ");
+        System.out.println("\t"+"A. Foreign -  ₱ 240.00");
+        System.out.println("\t"+"B. Local   -  ₱ 210.00");
+        //user is asked to pick a choice
+        System.out.print("\n"+"Enter choice: ");
+        String MovCat = br.readLine();
+
+        switch (MovCat) {
+            //so that user can enter either capital or lower case letter a
+            //also is a choice for the foreign movie
+            case "A":
+            case "a":
+                //computation for total people who will watch the movie
+                int paxA = student + senior + regular;
+                //total pax is concatenated
+                System.out.println("Total pax: " +paxA);
+                
+                //computation for the students who will watch
+                double StudFareA = (student * foreign) * 0.8;
+                //computation for senior's who will pay nothing
+                double SenFareA = senior * senior_discount;
+                //computation for ragular price 
+                double RegFareA = regular * foreign;
+                //computation for the total payment of all the people who chose foreign
+                double MovCatA = StudFareA + SenFareA + RegFareA;
+                System.out.println("Cinema Fare: ₱ " + decform.format(MovCatA));
+                break;
+
+            //so that user can enter either capital or lower case letter b
+            //also is a choice for the local movie
+            case "B":
+            case "b":
+                //computation for total people who will watch the movie
+                int paxB = student + senior + regular;
+                //total pax is concatenated
+                System.out.println("Total pax: " +paxB);
+
+                 //computation for the students who will watch
+                double StudFareB = (student * local) * 0.8;
+                //computation for senior's who will pay nothing
+                double SenFareB = senior * senior_discount;
+                //computation for ragular price 
+                double RegFareB = regular * local;
+                //computation for the total payment of all the people who chose local
+                double MovCatB = StudFareB + SenFareB + RegFareB;
+                System.out.println("Cinema Fare: ₱ " + decform.format (MovCatB));
+                break;
+
+            default:
+                //if the user has inputted a choice that is not in category
+                System.out.println("invslid choice: not in movie category");
+                break;
+        }
+    }
+
+}

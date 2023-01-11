@@ -1,0 +1,86 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication31;
+import java.io.*;
+/**
+ *
+ * @author Angelica
+ */
+public class JavaApplication31 {
+    static InputStreamReader reader = new InputStreamReader(System.in);
+    static BufferedReader br=new BufferedReader(reader);
+    
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+        // TODO code application logic here
+        
+        //cy stands for current year which is 2021
+        int cy = 2021;
+        
+        /** the user is asked to enter their first name
+         * fn stands for first name
+         */
+        System.out.print("Enter first name: ");
+        String fn=br.readLine();
+         /** the user is asked to enter their middle initial
+         * mi stands for middle initial
+         */
+        System.out.print("Enter middle initial: ");
+        String mi=br.readLine();
+         /** the user is asked to enter their last name
+         * ln stands for last name
+         */
+        System.out.print("Enter last name: ");
+        String ln=br.readLine();
+        // the user is asked to enter their aage
+        System.out.print("Enter age: ");
+        int age = Integer.parseInt(br.readLine());
+         /** for final output of contact tracing
+         * the user is asked to input their temperature
+         * in Celsius
+         * Variable C is the symbol of Celsius
+         */
+        System.out.print("Enter temperature (C): ");
+        double C = Double.parseDouble(br.readLine());
+        /**as final output the fn, mi and ln is declared
+         * spaces were put manually in appropriate places
+         * so is the dot for the mi
+         */
+        System.out.println("Hello, " +fn+ " " +mi+ ". " +ln);
+         /** to get the birthyear,the age is subtracted to the cy
+         * birthyear is declared to appear when program is run
+         */
+        int birthyear = cy - age;
+        System.out.println("You were born in the year: " +birthyear);
+         /** The user that has input temperature in Celsius
+          *  is declared to show it to the user
+          */
+        System.out.println("Your temp in Celsius: " +C);
+        /** Variable F is the symbol for Fahrenheit
+          * the formula of Celsius to Fahrenheit is
+          * F = C*9/5 + 32
+          *Fahrenheit is declared to show the user their
+          * temperature in Fahrenheit
+          */
+        double F = ((C * 9)/5) + 32;
+        System.out.println("Your temp in Fahrenheit: " +F);
+         /** Variable K is the symbol for Kelvin
+          * the formula of Celsius to Kelvin is
+          * K = C + 273.15
+          * Kelvin is declared to show the user their
+          * temperature in Kelvin
+          */
+        double K = C + 273.15;
+        System.out.println("Your temp in Kelvin: " +K);
+      
+        
+      
+        
+    }
+    
+}

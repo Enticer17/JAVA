@@ -1,0 +1,373 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package javaapplication51;
+import java.io.*;
+import java.text.DecimalFormat;
+/**
+ *
+ * @author Angelica
+ */
+public class JavaApplication51 {
+     static InputStreamReader reader = new InputStreamReader(System.in);
+     static BufferedReader br=new BufferedReader(reader);
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+        // TODO code application logic here
+        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+        DecimalFormat decform = new DecimalFormat("#.##");
+
+        boolean TryAgain = true;
+       
+        while (TryAgain != false) {
+            System.out.println ("\n\tLugaw is is ESSENTIAL Menu:\n"
+                                + "\tA. Lugaw Plain - ₱ 45.00\n"
+                                + "\tB. Lugaw w/ red Egg - ₱ 112.00\n"
+                                + "\tC. Lugaw w/ 1kg Chicken - ₱ 458.00\n");
+            System.out.print("Enter order: ");
+            String Lugaw = br.readLine();
+        switch (Lugaw){
+            case "a":
+            case "A":
+                System.out.print("Enter cash: ₱ ");
+                double payment = Double.parseDouble(br.readLine());
+                if (payment == 45 || payment >= 45){
+                double change = payment - 45;
+                double changeBreak = change;
+                System.out.println ("Your change is: ₱ " + decform.format(change));
+                System.out.println ("Money Breakdown: ");
+                
+                int onek = (int) changeBreak / 1000;
+                changeBreak -= onek * 1000;
+                int fiveh = (int) changeBreak / 500;
+                changeBreak -= fiveh * 500;
+                int twoh = (int) changeBreak / 200;
+                changeBreak -= twoh * 200;
+                int oneh = (int) changeBreak / 100;
+                changeBreak -= oneh * 100;
+                int fifty = (int) changeBreak / 50;
+                changeBreak -= fifty * 50;
+                int twenty = (int) changeBreak / 20;
+                changeBreak -= twenty * 20;
+                int ten = (int) changeBreak / 10;
+                changeBreak -= ten * 10;
+                int five = (int) changeBreak / 5;
+                changeBreak -= five * 5;
+                int one = (int) changeBreak / 1;
+                changeBreak -= one * 1;
+                int bentecinco = (int)(Math.floor(changeBreak / 0.25));
+                changeBreak -= bentecinco * 0.25;
+                int onecent = (int)(Math.round (changeBreak / 0.01));
+               
+                
+
+                System.out.println("1000 peso bill:        " + onek);
+                System.out.println("500  peso bill:        " + fiveh);
+                System.out.println("200  peso bill:        " + twoh);
+                System.out.println("100  peso bill:        " + oneh);
+                System.out.println("50   peso bill:        " + fifty);
+                System.out.println("20   peso bill / coin: " + twenty);
+                System.out.println("10   peso coin:        " + ten);
+                System.out.println("5    peso coin:        " + five);
+                System.out.println("1    peso coin:        " + one);
+                System.out.println("25   peso cent:        " + bentecinco);
+                System.out.println("1    peso cent:        " + onecent);
+                }
+                else if (payment < 45) {
+                        while (payment < 45){
+                            System.out.println ("\tcash tendered should not be less than total\n"
+                                                + "\tplease enter an exact or more than the total amount");
+                            System.out.print("Enter cash: ₱ ");
+                            double payment1 = Double.parseDouble(br.readLine());
+                                if (payment1 <= 45){
+                                      continue;
+                                }
+                                else if (payment1 >= 45 || payment1 == 45){
+                                    double change1 = payment1 - 45;
+                                    double changeBreak1 = change1;
+                                    System.out.println ("Your change is: ₱ " + decform.format(change1));
+                                    int onek = (int) changeBreak1 / 1000;
+                                    changeBreak1 -= onek * 1000;
+                                    int fiveh = (int) changeBreak1 / 500;
+                                    changeBreak1 -= fiveh * 500;
+                                    int twoh = (int) changeBreak1 / 200;
+                                    changeBreak1-= twoh * 200;
+                                    int oneh = (int) changeBreak1 / 100;
+                                    changeBreak1 -= oneh * 100;
+                                    int fifty = (int) changeBreak1 / 50;
+                                    changeBreak1 -= fifty * 50;
+                                    int twenty = (int) changeBreak1 / 20;
+                                    changeBreak1 -= twenty * 20;
+                                    int ten = (int) changeBreak1 / 10;
+                                    changeBreak1-= ten * 10;
+                                    int five = (int) changeBreak1 / 5;
+                                    changeBreak1 -= five * 5;
+                                    int one = (int) changeBreak1 / 1;
+                                    changeBreak1 -= one * 1;
+                                    int bentecinco = (int) (Math.floor(changeBreak1 / 0.25));
+                                    changeBreak1 -= bentecinco * 0.25;
+                                    int onecent = (int) (Math.round(changeBreak1 / 0.01));
+                                  
+
+
+                                    System.out.println("1000 peso bill:        " + onek);
+                                    System.out.println("500  peso bill:        " + fiveh);
+                                    System.out.println("200  peso bill:        " + twoh);
+                                    System.out.println("100  peso bill:        " + oneh);
+                                    System.out.println("50   peso bill:        " + fifty);
+                                    System.out.println("20   peso bill / coin: " + twenty);
+                                    System.out.println("10   peso coin:        " + ten);
+                                    System.out.println("5    peso coin:        " + five);
+                                    System.out.println("1    peso coin:        " + one);
+                                    System.out.println("25   peso cent:        " + bentecinco);
+                                    System.out.println("1    peso cent:        " + onecent);
+                                    break;
+                                }
+                                else {
+                                    System.out.println ("end of loop");
+                                }
+                        }
+                    }
+                    
+                    break;
+                case "b":
+                case "B":
+                    System.out.print("Enter cash: ₱ ");
+                    double paymentB = Double.parseDouble(br.readLine());
+                    if (paymentB >= 112 || paymentB == 112){
+                    double changeB = paymentB - 112;
+                    double changeBreakB = changeB;
+                    System.out.println ("Your change is: ₱ " + decform.format(changeB));
+                    System.out.println ("Money Breakdown: ");
+
+                    int onekB = (int) changeBreakB / 1000;
+                    changeBreakB -= onekB * 1000;
+                    int fivehB = (int) changeBreakB / 500;
+                    changeBreakB -= fivehB * 500;
+                    int twohB = (int) changeBreakB / 200;
+                    changeBreakB -= twohB * 200;
+                    int onehB = (int) changeBreakB / 100;
+                    changeBreakB -= onehB * 100;
+                    int fiftyB = (int) changeBreakB / 50;
+                    changeBreakB -= fiftyB * 50;
+                    int twentyB = (int) changeBreakB / 20;
+                    changeBreakB -= twentyB * 20;
+                    int tenB = (int) changeBreakB / 10;
+                    changeBreakB -= tenB * 10;
+                    int fiveB = (int) changeBreakB / 5;
+                    changeBreakB -= fiveB * 5;
+                    int oneB = (int) changeBreakB / 1;
+                    changeBreakB-= oneB * 1;
+                    int bentecincoB = (int)(Math.floor(changeBreakB / 0.25));
+                    changeBreakB -= bentecincoB * 0.25;
+                    int onecentB = (int)(Math.round (changeBreakB / 0.01));
+
+
+
+                    System.out.println("1000 peso bill:        " + onekB);
+                    System.out.println("500  peso bill:        " + fivehB);
+                    System.out.println("200  peso bill:        " + twohB);
+                    System.out.println("100  peso bill:        " + onehB);
+                    System.out.println("50   peso bill:        " + fiftyB);
+                    System.out.println("20   peso bill / coin: " + twentyB);
+                    System.out.println("10   peso coin:        " + tenB);
+                    System.out.println("5    peso coin:        " + fiveB);
+                    System.out.println("1    peso coin:        " + oneB);
+                    System.out.println("25   peso cent:        " + bentecincoB);
+                    System.out.println("1    peso cent:        " + onecentB);
+                    }
+                    else if (paymentB < 112) {
+                            while (paymentB < 112){
+                                System.out.println ("\tcash tendered should not be less than total\n"
+                                                    + "\tplease enter an exact or more than the total amount");
+                                System.out.print("Enter cash: ₱ ");
+                                double paymentB1 = Double.parseDouble(br.readLine());
+                                    if (paymentB1 <= 112){
+                                          continue;
+                                    }
+                                    else if (paymentB1 >= 112 || paymentB1 == 112){
+                                        double changeB1 = paymentB1 - 112;
+                                        double changeBreakB1 = changeB1;
+                                        System.out.println ("Your change is: ₱ " + decform.format(changeB1));
+                                        System.out.println ("Money Breakdown: ");
+
+                                        int onekB = (int) changeBreakB1 / 1000;
+                                        changeBreakB1 -= onekB * 1000;
+                                        int fivehB = (int) changeBreakB1 / 500;
+                                        changeBreakB1 -= fivehB * 500;
+                                        int twohB = (int) changeBreakB1 / 200;
+                                        changeBreakB1 -= twohB * 200;
+                                        int onehB = (int) changeBreakB1 / 100;
+                                        changeBreakB1 -= onehB * 100;
+                                        int fiftyB = (int) changeBreakB1 / 50;
+                                        changeBreakB1 -= fiftyB * 50;
+                                        int twentyB = (int) changeBreakB1 / 20;
+                                        changeBreakB1 -= twentyB * 20;
+                                        int tenB = (int) changeBreakB1 / 10;
+                                        changeBreakB1 -= tenB * 10;
+                                        int fiveB = (int) changeBreakB1 / 5;
+                                        changeBreakB1 -= fiveB * 5;
+                                        int oneB = (int) changeBreakB1 / 1;
+                                        changeBreakB1-= oneB * 1;
+                                        int bentecincoB = (int)(Math.floor(changeBreakB1 / 0.25));
+                                        changeBreakB1 -= bentecincoB * 0.25;
+                                        int onecentB = (int)(Math.round (changeBreakB1 / 0.01));
+
+
+
+                                        System.out.println("1000 peso bill:        " + onekB);
+                                        System.out.println("500  peso bill:        " + fivehB);
+                                        System.out.println("200  peso bill:        " + twohB);
+                                        System.out.println("100  peso bill:        " + onehB);
+                                        System.out.println("50   peso bill:        " + fiftyB);
+                                        System.out.println("20   peso bill / coin: " + twentyB);
+                                        System.out.println("10   peso coin:        " + tenB);
+                                        System.out.println("5    peso coin:        " + fiveB);
+                                        System.out.println("1    peso coin:        " + oneB);
+                                        System.out.println("25   peso cent:        " + bentecincoB);
+                                        System.out.println("1    peso cent:        " + onecentB);
+                                        break;
+                                    }
+                                    else {
+                                        System.out.println ("end of loop");
+                                    }
+                            }
+                    }
+                    break;
+                case "c":
+                case "C":
+                    System.out.print("Enter cash: ₱ ");
+                    double paymentC = Double.parseDouble(br.readLine());
+                    if (paymentC == 458 || paymentC >= 458){
+                    double changeC = paymentC - 458;
+                    double changeBreakC = changeC;
+                    System.out.println ("Your change is: ₱ " + decform.format(changeC));
+                    System.out.println ("Money Breakdown: ");
+
+                    int onekC = (int) changeBreakC / 1000;
+                    changeBreakC -= onekC * 1000;
+                    int fivehC = (int) changeBreakC / 500;
+                    changeBreakC -= fivehC * 500;
+                    int twohC = (int) changeBreakC / 200;
+                    changeBreakC -= twohC * 200;
+                    int onehC = (int) changeBreakC / 100;
+                    changeBreakC -= onehC * 100;
+                    int fiftyC = (int) changeBreakC / 50;
+                    changeBreakC -= fiftyC * 50;
+                    int twentyC = (int) changeBreakC / 20;
+                    changeBreakC -= twentyC * 20;
+                    int tenC = (int) changeBreakC / 10;
+                    changeBreakC -= tenC * 10;
+                    int fiveC = (int) changeBreakC / 5;
+                    changeBreakC -= fiveC * 5;
+                    int oneC = (int) changeBreakC / 1;
+                    changeBreakC-= oneC * 1;
+                    int bentecincoC = (int)(Math.floor(changeBreakC / 0.25));
+                    changeBreakC -= bentecincoC * 0.25;
+                    int onecentC = (int)(Math.round (changeBreakC / 0.01));
+
+
+
+                    System.out.println("1000 peso bill:        " + onekC);
+                    System.out.println("500  peso bill:        " + fivehC);
+                    System.out.println("200  peso bill:        " + twohC);
+                    System.out.println("100  peso bill:        " + onehC);
+                    System.out.println("50   peso bill:        " + fiftyC);
+                    System.out.println("20   peso bill / coin: " + twentyC);
+                    System.out.println("10   peso coin:        " + tenC);
+                    System.out.println("5    peso coin:        " + fiveC);
+                    System.out.println("1    peso coin:        " + oneC);
+                    System.out.println("25   peso cent:        " + bentecincoC);
+                    System.out.println("1    peso cent:        " + onecentC);
+                    }
+                    else if (paymentC < 458) {
+                        while (paymentC < 458){
+                            System.out.println ("\tcash tendered should not be less than total\n"
+                                                + "\tplease enter an exact or more than the total amount");
+                            System.out.print("Enter cash: ₱ ");
+                            double paymentC1 = Double.parseDouble(br.readLine());
+                                if (paymentC1 <= 458){
+                                      continue;
+                                }
+                                else if (paymentC1 >= 458 || paymentC1 == 458){
+                                    double changeC1 = paymentC1 - 458;
+                                    double changeBreakC1 = changeC1;
+                                    System.out.println ("Your change is: ₱ " + decform.format(changeC1));
+                                    System.out.println ("Money Breakdown: ");
+
+                                    int onekC = (int) changeBreakC1 / 1000;
+                                    changeBreakC1 -= onekC * 1000;
+                                    int fivehC = (int) changeBreakC1 / 500;
+                                    changeBreakC1 -= fivehC * 500;
+                                    int twohC = (int) changeBreakC1 / 200;
+                                    changeBreakC1 -= twohC * 200;
+                                    int onehC = (int) changeBreakC1 / 100;
+                                    changeBreakC1 -= onehC * 100;
+                                    int fiftyC = (int) changeBreakC1 / 50;
+                                    changeBreakC1 -= fiftyC * 50;
+                                    int twentyC = (int) changeBreakC1 / 20;
+                                    changeBreakC1 -= twentyC * 20;
+                                    int tenC = (int) changeBreakC1 / 10;
+                                    changeBreakC1 -= tenC * 10;
+                                    int fiveC = (int) changeBreakC1 / 5;
+                                    changeBreakC1 -= fiveC * 5;
+                                    int oneC = (int) changeBreakC1 / 1;
+                                    changeBreakC1-= oneC * 1;
+                                    int bentecincoC = (int)(Math.floor(changeBreakC1 / 0.25));
+                                    changeBreakC1 -= bentecincoC * 0.25;
+                                    int onecentC = (int)(Math.round (changeBreakC1 / 0.01));
+
+
+
+                                    System.out.println("1000 peso bill:        " + onekC);
+                                    System.out.println("500  peso bill:        " + fivehC);
+                                    System.out.println("200  peso bill:        " + twohC);
+                                    System.out.println("100  peso bill:        " + onehC);
+                                    System.out.println("50   peso bill:        " + fiftyC);
+                                    System.out.println("20   peso bill / coin: " + twentyC);
+                                    System.out.println("10   peso coin:        " + tenC);
+                                    System.out.println("5    peso coin:        " + fiveC);
+                                    System.out.println("1    peso coin:        " + oneC);
+                                    System.out.println("25   peso cent:        " + bentecincoC);
+                                    System.out.println("1    peso cent:        " + onecentC);
+                                    break;
+                                }
+                                else {
+                                    System.out.println ("end of loop");
+                                }
+                        }
+                    }
+                    break;
+                default:
+                    System.out.println("Order not lugaw, therefore not ESSENTIAL.");
+                    break;
+            }
+            System.out.println ("Do you want to order again?"
+                                + "[1] Yes / [2] No");
+            System.out.print ("Enter choice: ");
+            int choice = Integer.parseInt(br.readLine());
+                switch (choice) {
+                    case 1:
+                        TryAgain = true;
+                        //continue;
+                        break;
+                    case 2:
+                        System.out.println ("Thank you! Please come again!");
+                        TryAgain = false;
+                        break;
+                    default:
+                        System.out.print ("end of loop");
+                        TryAgain = false;
+                        break;
+                }
+        
+}
+}
+}
+

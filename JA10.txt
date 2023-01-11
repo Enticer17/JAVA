@@ -1,0 +1,239 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication45;
+import java.io.*;
+/**
+ *
+ * @author Angelica
+ */
+public class JavaApplication45 {
+
+        static InputStreamReader reader = new InputStreamReader(System.in);
+    static BufferedReader br=new BufferedReader(reader);
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+        // TODO code application logic here
+        
+        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+
+        boolean Yes = true;
+        boolean No = true;
+        boolean YesFirst = true;
+        boolean YesSecond = true;
+        boolean YesThird = true;
+        int Symp1;
+        int Symp2;
+        int Symp1CaseA = 0;
+        int Symp1CaseB = 0;
+        int Symp2CaseC = 0;
+        int Symp2CaseD = 0;
+
+while (No != false){
+    while(Yes != false){
+        while (YesFirst != false){
+        while (YesSecond != false){
+        while (YesThird != false){
+        System.out.println("\nHello! This is your DCIT 23C Contact Tracing form:");
+        System.out.print("\nEnter your name: ");
+        String name = br.readLine();
+        System.out.print("Enter your contact number: ");
+        String ConNum = br.readLine();
+        System.out.print("Enter your email address: ");
+        String EmAdd = br.readLine();
+        
+            if (name.length() == 0 || ConNum.length() == 0 || EmAdd.length() == 0) {
+                System.out.println ("Sorry, you need to provide all"
+                                    + "\nnecessary details above.");
+                YesThird = false;
+                YesSecond = false;
+                YesFirst =  false;
+                No = false;
+                break;
+            }
+
+        System.out.print("\n   Place of origin: "
+                         + "\n   [1] NCR + Bubble"
+                         + "\n   [2] Other areas (kindly specify)");
+        System.out.print("\n   Enter your place of origin: ");
+        int origin = Integer.parseInt(br.readLine());
+
+                if (origin == 1) {
+                System.out.println("YOU WILL UNDERGO IN A 14 DAYS QUARANTINE DUE TO YOUR PLACE OF ORIGIN.");
+                    for (int NumDaysA = 1; NumDaysA < 15; NumDaysA++ ) {
+                        System.out.println("Days " +NumDaysA+ " - Having any symptoms? [1] Yes [2] No");
+                        System.out.print("Enter choice: ");
+                        Symp1 = Integer.parseInt(br.readLine());
+                            if (Symp1 == 1) {
+                                Symp1CaseA++; 
+                                continue;
+                            }
+                            if (Symp1 == 2) {
+                                Symp1CaseB++; 
+                                continue;
+                            }
+                            if (Symp1 != 1 || Symp1 != 2){
+                                    YesFirst = false;
+                                    YesSecond = false;
+                                    YesThird = false;
+                                    No = false;
+                                    break;
+                            }
+                    }
+                                if (Symp1CaseA >= 8 && Symp1CaseA <= 14){
+                                    System.out.print("\nEND OF YOUR QUARANTINE "
+                                                     + "\nResult:" 
+                                                     + "\nName: " +name
+                                                     + "\nContact Number: " +ConNum
+                                                     + "\nEmail Address: " +EmAdd
+                                                     + "\nPlace of Origin: NCR + Bubble, Philippines"
+                                                     + "\nCase Category: Severe Case\n");
+                                    YesFirst = false;
+                                    YesSecond = false;
+                                    YesThird = false;
+                                    No = false;
+                                    break;
+                                }
+                                else if (Symp1CaseA >= 1 && Symp1CaseA <= 7){
+                                    System.out.print("\nEND OF YOUR QUARANTINE "
+                                                     + "\nResult:" 
+                                                     + "\nName: " +name
+                                                     + "\nContact Number: " +ConNum
+                                                     + "\nEmail Address: " +EmAdd
+                                                     + "\nPlace of Origin: NCR + Bubble, Philippines"
+                                                     + "\nCase Category: Mild Case\n");
+                                    YesFirst = false;
+                                    YesSecond = false;
+                                    YesThird = false;
+                                    No = false;
+                                    break;
+                                }
+                                else if (Symp1CaseB == 14){
+                                    System.out.print("\nEND OF YOUR QUARANTINE "
+                                                     + "\nResult:" 
+                                                     + "\nName: " +name
+                                                     + "\nContact Number: " +ConNum
+                                                     + "\nEmail Address: " +EmAdd
+                                                     + "\nPlace of Origin: NCR + Bubble, Philippines"
+                                                     + "\nCase Category: Asymptomatic Case\n");
+                                    YesFirst = false;
+                                    YesSecond = false;
+                                    YesThird = false;
+                                    No = false;
+                                    break;
+                                }
+                }
+                else if (origin == 2) {
+                System.out.println("YOU WILL UNDERGO IN A 7 DAYS QUARANTINE DUE TO YOUR PLACE OF ORIGIN.");
+                System.out.print("Enter specific area: ");
+                String Area2 = br.readLine();
+                    for (int NumDaysB = 1; NumDaysB < 8; NumDaysB++ ) {
+                        System.out.println("Days " +NumDaysB+ " - Having any symptoms? [1] Yes [2] No");
+                        System.out.print("Enter choice: ");
+                        Symp2 = Integer.parseInt(br.readLine());
+                            if (Symp2 == 1) {
+                                Symp2CaseC++; 
+                                continue;
+                            }
+                            if (Symp2 == 2) {
+                                Symp2CaseD++; 
+                                continue;
+                            }
+                            if (Symp2 != 1 || Symp2 != 2){
+                                    YesFirst = false;
+                                    YesSecond = false;
+                                    YesThird = false;
+                                    No = false;
+                                    break;
+                            }
+                    }
+                                if (Symp2CaseC >= 4 && Symp2CaseC <= 7){
+                                    System.out.print("\nEND OF YOUR QUARANTINE "
+                                                     + "\nResult:" 
+                                                     + "\nName: " +name
+                                                     + "\nContact Number: " +ConNum
+                                                     + "\nEmail Address: " +EmAdd
+                                                     + "\nPlace of Origin: " +Area2+ ", Philippines"
+                                                     + "\nCase Category: Severe Case\n");
+                                    YesFirst = false;
+                                    YesSecond = false;
+                                    YesThird = false;
+                                    No = false;
+                                    break;
+                                }
+                                else if (Symp2CaseC >= 1 && Symp2CaseC <= 3){
+                                    System.out.print("\nEND OF YOUR QUARANTINE "
+                                                     + "\nResult:" 
+                                                     + "\nName: " +name
+                                                     + "\nContact Number: " +ConNum
+                                                     + "\nEmail Address: " +EmAdd
+                                                     + "\nPlace of Origin: " +Area2+ ", Philippines"
+                                                     + "\nCase Category: Mild Case\n");
+                                    YesFirst = false;
+                                    YesSecond = false;
+                                    YesThird = false;
+                                    No = false;
+                                    break;
+                                }
+                                else if (Symp2CaseD == 7){
+                                    System.out.print("\nEND OF YOUR QUARANTINE "
+                                                     + "\nResult:" 
+                                                     + "\nName: " +name
+                                                     + "\nContact Number: " +ConNum
+                                                     + "\nEmail Address: " +EmAdd
+                                                     + "\nPlace of Origin: " +Area2+ ", Philippines"
+                                                     + "\nCase Category: Asymptomatic Case\n");
+                                    YesFirst = false;
+                                    YesSecond = false;
+                                    YesThird = false;
+                                    No = false;
+                                    break;
+                                }
+                }
+                else {
+                    System.out.println("\tInvalid input!");
+                    YesFirst = false;
+                    YesSecond = false;
+                    YesThird = false;
+                    No = false;
+                    break;
+                }
+            }
+        }
+        }
+        System.out.println ("\nFill up the form again? ");
+        System.out.println ("A. Yes, please"
+                            + "\nB. No, Thanks");
+        System.out.print("Enter choice: ");
+        String FillQuery = br.readLine();
+        switch (FillQuery) {
+            case "A":
+            case "a":
+                YesFirst = true;
+                YesSecond = true;
+                YesThird = true;
+                break;   
+            case "B":
+            case "b":
+                Yes =false;
+                YesFirst = false;
+                YesSecond = false;
+                YesThird = false;
+                No = false;
+                System.out.println ("Contact Tracing has ended"
+                                    + "\nThank you for participating in Contact Tracing");
+                break;
+            default:
+                No = false;
+                System.out.println("choice not valid");
+                break;
+        }
+            }
+}
+}
+}
